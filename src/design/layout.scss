@@ -1,0 +1,98 @@
+// 布局模块
+// body容器
+body,
+#app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  // width: 4301px;
+  // height: 1920px;
+}
+
+//数字
+.custom-num-orange {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 55px;
+  color: #ff9f46;
+  white-space: nowrap;
+  font-family: "dina";
+}
+
+//色牌
+
+.common-value-card {
+  margin: 16px;
+  box-sizing: border-box;
+
+  .head {
+    height: 28px;
+    text-indent: 12px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+
+  .main {
+    padding: 16px;
+    display: flex;
+    height: 93px;
+    align-items: center;
+    .icon {
+      margin-right: 24px;
+      margin-left: 8px;
+    }
+    .data {
+      .value-main {
+        color: white;
+        font-size: 28px;
+        .unit {
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 14px;
+          margin-left: 4px;
+        }
+      }
+      .value-des {
+        margin-top: 4px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+      }
+    }
+  }
+  &.green {
+    border: 1px solid #00d5d5;
+    .main {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 129, 234, 0.3) 0%,
+        rgba(0, 213, 213, 0.3) 100%
+      );
+    }
+    .head {
+      background: linear-gradient(
+        90.02deg,
+        rgba(0, 213, 213, 0.312) 0.78%,
+        rgba(0, 129, 234, 0.216) 99.99%
+      );
+    }
+  }
+  &.blue {
+    .main {
+      background: linear-gradient(
+        90deg,
+        rgba(67, 70, 211, 0.2) 0%,
+        rgba(0, 129, 234, 0.55) 100%
+      );
+    }
+    border: 1px solid #025de4;
+    .head {
+      background: linear-gradient(
+        90.02deg,
+        rgba(2, 93, 228, 0.6) 12.66%,
+        rgba(2, 93, 228, 0.12) 99.99%
+      );
+    }
+  }
+}

@@ -1,0 +1,65 @@
+//全局公共样式
+
+//字体配置
+@font-face {
+  font-family: "pz";
+  src: url("./font/PangMenZhengDao.ttf");
+}
+@font-face {
+  font-family: "source";
+  src: url("./font/SourceHanSansCN-Regular.otf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "source";
+  box-sizing: border-box;
+  // font-size: 12px;
+}
+
+.a-left {
+  animation: leftIn 2s ease 0s 1 normal forwards;
+}
+.a-right {
+  animation: rightIn 2s ease 0s 1 normal forwards;
+}
+.a-r-left {
+  animation: leftOut 0.6s ease 0s 1 normal forwards;
+}
+.a-r-right {
+  animation: rightOut 0.6s ease 0s 1 normal forwards;
+}
+@keyframes leftIn {
+  from {
+    left: -700px;
+  }
+  to {
+    left: 50px;
+  }
+}
+@keyframes leftOut {
+  from {
+    left: 50px;
+  }
+  to {
+    left: -700px;
+  }
+}
+
+@keyframes rightIn {
+  from {
+    right: -700px;
+  }
+  to {
+    right: 50px;
+  }
+}
+@keyframes rightOut {
+  from {
+    right: 50px;
+  }
+  to {
+    right: -700px;
+  }
+}
