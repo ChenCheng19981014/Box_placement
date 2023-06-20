@@ -3,9 +3,7 @@
 // }
 
 const fn = (runScene, inputData = {}, constant = {}) => {
-
   const fn = (map) => {
-
     const {
       runScene,
       Utils,
@@ -14,41 +12,50 @@ const fn = (runScene, inputData = {}, constant = {}) => {
       constant,
       bus,
       Three,
-      camera, scene, controls, renderer
+      camera,
+      scene,
+      controls,
+      renderer,
     } = map;
-
 
     // 场景初始化
     class InitScene {
-      name = 'initScene';
+      name = "initScene";
       mounted() {
         // 脚本
         runScene.script.playAll();
+
         // 入场动画
-        runScene.cameraEx.setTemp('初始', { time: 2 });
+        // runScene.cameraEx.setTemp('初始', { time: 2 });
+
+        const ps = [
+          { x: -234.5286, y: 0, z: -572.3755 },
+          { x: 2137.4901, y: 0, z: -572.3755 },
+          { x: -234.5286, y: 0, z: 565.9378 },
+          { x: 2137.4901, y: 0, z: 565.9378 },
+        ];
+        /**
+         * 中心点 x+x/2 y+y/2
+         * 
+         */
+
+        // 添加盒子
+        this.addBox(ps);
       }
-    }
+      // 添加 box
+      addBox(ps) {
+        const long = Math.abs(ps[0].x) + Math.abs(ps[1].x);
 
+        const wide = Math.abs(ps[2].z) + Math.abs(ps[3].z);
 
-    // 添加点位
-    class Point {
-      name = 'initScene';
+        console.log('long:', long, wide);
 
-      mounted() {
-        this.addSprite()
-      }
-      addSprite() {
-        this.pointModel = getModel('点位')
-        let dom = document.querySelector(`.point`)
-        const sprite = Utils.domTo3DSprite(dom)
-        sprite.scale.set(20, 20, 20)
-        this.pointModel.add(sprite)
       }
     }
 
     // 基本事件
     class Events {
-      name = 'events'
+      name = "events";
       constructor() {
         runScene.cb.model.setSelect.add(
           "trigger-click",
@@ -65,7 +72,7 @@ const fn = (runScene, inputData = {}, constant = {}) => {
       }
     }
 
-    return [Events, InitScene, Point];
+    return [Events, InitScene];
   };
 
   const modules = fn({
@@ -88,5 +95,5 @@ const fn = (runScene, inputData = {}, constant = {}) => {
       return ins;
     })
     .map((ins) => ins?.mounted?.());
-}
+};
 export { fn };

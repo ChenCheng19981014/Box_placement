@@ -27,7 +27,7 @@
     "js-cookie": "^3.0.1",
     "moment": "^2.29.4",
     "postcss-px-to-viewport": "^1.1.1",
-    "run-scene-v2": "^0.0.96",
+    "run-scene-v2": "0.0.98",
     "sass-resources-loader": "^2.2.5",
     "scss": "^0.2.4",
     "three": "^0.143.0",

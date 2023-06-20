@@ -22,7 +22,8 @@ export default {
   data() {
     return {
       path:
-        "http://192.168.3.8:8080/file?path=project/linkpoint/&key=202306051234347264851001202337",
+        // "http://192.168.3.8:8080/file?path=project/linkpoint/&key=202306051234347264851001202337",
+        "http://192.168.3.8:8080/file?path=project/linkpoint/&key=202306200958127630411001202394",
     };
   },
   async mounted() {
